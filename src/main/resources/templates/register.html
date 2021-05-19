@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Thymeleaf Application</title>
+
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.css} "/>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+
+<div class="container">
+    <form autocomplete="off" th:action="@{/registration/saveRegister}" th:object="${user}" method="post"> 
+        <label>Username</label>
+        <input type="text" id="username" placeholder=" Username" th:field="*{username}" class="form-control"/><br/>
+        <label>Password</label>
+        <input type="text" id="password" placeholder=" Password" th:field="*{password}" class="form-control"/><br/>
+        <button type="submit" class="btn btn-success text-center form-control">Save</button>
+    </form>
+</div>
+
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,124 @@
+/* 
+	source: taniarascia.com
+*/
+* {
+  box-sizing: border-box
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Dosis', sans-serif;
+  line-height: 1.6;
+  color: #700;
+  background: #F7F7F7;
+}
+
+h1, .application {
+  text-align: center;
+  padding: 1.5rem 2.5rem;
+  background-image: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
+  margin: 0 ; 
+  font-size: 1.5rem;
+  color: white;
+}  
+.review {  
+  color:#4D6879;
+  text-shadow: 8px 8px 4px rgba(0, 0, 0 , .1);
+  font-size:40px;
+  font-family:'Courier New';
+  left: 10%;
+  transform: translate(20%, 0%);
+}
+.info {
+  color:#4D6879;
+  text-shadow: 8px 8px 4px rgba(0, 0, 0, .1);
+  font-size:17px;
+  font-family: 'Courier New';
+}
+h2 {  
+  margin: 0;
+  font-size: 17px;  
+  color: #4D6879;
+  text-shadow: 8px 8px 4px rgba(0, 0, 0 , .1);
+} 
+.mid {
+  position: absolute;
+  left: 50%;
+  /*top: 50%;*/
+  transform: translate(-50%, 0%);
+}
+
+#ui-root {  
+  max-width: 1200px;
+  margin: 0 auto;
+} 
+
+.title-box {
+  position: absolute; 
+  padding: 3rem 3rem;
+}
+.btn-box { 
+  margin: 0.5rem;
+  padding: 0.25rem 2.5rem; 
+}
+
+.btn-box:hover {
+  box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
+  transform: translate3D(0, -2px, 0);
+} 
+ 
+.pageCenter {
+  background: #F7F7F7;  
+  position: relative;
+}
+
+.card { 
+  position: absolute;
+  left: 50%;
+  /*top: 50%;*/
+  transform: translate(-50%, 0%);
+
+  margin: 1rem;
+  max-width: 385px;
+  background: white;
+  box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all .2s linear;
+}   
+
+.card2 { 
+  margin: 1rem;  
+  background: white;
+  box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all .2s linear;
+}   
+
+@media screen and (min-width: 500px) {
+  .card2 {
+    flex: 1 1 calc(45% - 50rem);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .card2 {
+    flex: 1 1 calc(33% - 2rem);
+  }
+}
+
+.card2:nth-child(2n) h1 {
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.cardContainer { 
+  min-width: 500px;
+  overflow: hidden;
+  display: flex;   
+}
+
+.listContainer {
+  padding: 0rem 2.5rem;
+}

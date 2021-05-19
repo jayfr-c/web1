@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Thymeleaf Application</title>
+
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.css} "/>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+
+<div class="container">
+    <div class="alert alert-danger" role="alert" th:if="${param.error}">
+        Wrong Username or Passrod
+    </div>
+    <form th:action="@{/acc/login}" method="post">
+        <h1 class="h3 mb-3 font-weight-normal">Signin</h1>
+
+        <label>Username</label>
+        <input type="text" name="username" class="form-control"/>
+        <label>Password</label>
+        <input type="password" id="password" name="password" class="form-control"/>
+        <br/>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">SignIn</button>
+        <br/>
+        <div class="margin-top20 text-center"><a th:href="@{/acc/register}">Go Register</a>
+        <br/>
+        <div class="margin-top20 text-center"><a th:href="@{/index}">Back to Main Page</a>
+        </div>
+    </form>
+</div>
+
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+</body>
+</html>
