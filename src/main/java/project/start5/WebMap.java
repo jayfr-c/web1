@@ -5,6 +5,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 import javax.validation.Valid;
 
+import org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -67,6 +68,11 @@ public class WebMap {
         return "results";
     }
 
+    @GetMapping("/error") 
+    public String errorMap() {
+        return "error";
+    }
+
     @PostMapping("/page2")
     public String page2Map(Model m, @Valid Inputs details, Errors errors) { 
         String str = " "; 
@@ -103,7 +109,7 @@ public class WebMap {
         m.addAttribute("percentage", res[2]);
         m.addAttribute("details", details); 
         //return "redirect:/saved"; 
-        return "results";
+        return "result";
     }
 
     private Boolean emptyForm(Fragment root) { 
