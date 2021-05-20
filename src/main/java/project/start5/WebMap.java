@@ -66,12 +66,7 @@ public class WebMap {
     @GetMapping("/results") 
     public String resultsMap() {
         return "results";
-    }
-
-    @GetMapping("/error") 
-    public String errorMap() {
-        return "error";
-    }
+    } 
 
     @PostMapping("/page2")
     public String page2Map(Model m, @Valid Inputs details, Errors errors) { 
@@ -114,7 +109,7 @@ public class WebMap {
         m.addAttribute("percentage", "@data");
         m.addAttribute("details", details); 
         //return "redirect:/saved"; 
-        return "result";
+        return "results";
     }
 
     private Boolean emptyForm(Fragment root) { 
