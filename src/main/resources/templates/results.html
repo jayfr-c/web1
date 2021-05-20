@@ -38,7 +38,7 @@
             th:text="${child.value == true ? 'checked' : 'not checked'}">checked/not checked</strong>
 
         <div th:if="${!#lists.isEmpty(child.children)}"
-             th:replace="saved :: printNode(${child.children}, false)"></div>
+             th:replace="results :: printNode(${child.children}, false)"></div>
     </div>
 </div>
 
@@ -53,7 +53,7 @@
                 <h2><strong>Gender:</strong> <span th:text="${details.gen}"></span></h2><br>
 
                 <div th:if="${!#lists.isEmpty(tree.children)}"
-                     th:replace="saved :: printNode(${tree.children}, true)">
+                     th:replace="results :: printNode(${tree.children}, true)">
                 </div> 
 
                <!--  <a th:href="@{/page2}" class="btn btn-primary">Go back</a> -->
