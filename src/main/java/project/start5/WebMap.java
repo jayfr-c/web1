@@ -104,6 +104,7 @@ public class WebMap {
         m.addAttribute("percentage", res[2]);
         m.addAttribute("details", details); */
 
+        m.addAttribute("tree", root);
         m.addAttribute("val", "@data");
         m.addAttribute("strVal", "@data"); 
         m.addAttribute("percentage", "@data");
