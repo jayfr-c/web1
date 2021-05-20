@@ -100,13 +100,18 @@ public class WebMap {
             return "page2";
         }
 
-        MLP mlp = new MLP();
+       /* MLP mlp = new MLP();
         String[] res = mlp.engine(root, details.getAge(), details.getGen());
         System.out.println(root.getChildren().size()+"\n\n  --==--==---\n\n="+details.getAge());
             m.addAttribute("tree", root);
         m.addAttribute("val", res[0]);
         m.addAttribute("strVal", res[1]); 
         m.addAttribute("percentage", res[2]);
+        m.addAttribute("details", details); */
+
+        m.addAttribute("val", "@data");
+        m.addAttribute("strVal", "@data"); 
+        m.addAttribute("percentage", "@data");
         m.addAttribute("details", details); 
         //return "redirect:/saved"; 
         return "result";

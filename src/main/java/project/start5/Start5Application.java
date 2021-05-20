@@ -1,8 +1,8 @@
 package project.start5;
 
-import org.springframework.boot.SpringApplication;
+import org.springframework.boot.SpringApplication; 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+ 
 @SpringBootApplication
 public class Start5Application {
 
