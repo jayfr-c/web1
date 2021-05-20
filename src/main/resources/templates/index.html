@@ -15,8 +15,10 @@
         	<br>
             <div class="card2" style="min-height:250px">
             	<h2 style="font-size: 40px; position: absolute; left:50%; transform: translate(-50%, 20%);">Application Testing<h2><br>
-                <button class="btn btn-primary mid" type="submit" >Go to App</button> 
-                <button class="btn btn-primary mid" type="submit">T2DM</button>
+                <div class="mid" style="position:relative;top:30%;transform:translate(-50%, 20%);">
+                    <button class="btn-primary" th:href="@{/home}">Go to App</button> 
+                    <button class="btn-primary" th:href="@{/page1}">T2DM</button>  
+                </div>
             </div>
         </form>  
         <!-- <div class="margin-top20 text-center"><a th:href="@{/acc/register}">Go Register</a>
