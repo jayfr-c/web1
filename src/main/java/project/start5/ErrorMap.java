@@ -33,7 +33,7 @@ public class ErrorMap implements ErrorController {
 	
 	private static final String PATH = "/error";
 
-	@GetMapping(value = "/error") 
+	@GetMapping("/error") 
 	public String handleError(HttpServletRequest request) {
 	 	Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
 
