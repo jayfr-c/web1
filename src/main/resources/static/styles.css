@@ -27,6 +27,8 @@ h1, .application {
   text-shadow: 8px 8px 4px rgba(0, 0, 0 , .1);
   font-size:40px;
   font-family:'Courier New';
+}
+.indent {
   left: 10%;
   transform: translate(20%, 0%);
 }

@@ -23,9 +23,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" th:href="@{/index}">Home</a>     
                 </li>
-                <li class="nav-item active">
+                <!-- <li class="nav-item active">
                     <a class="nav-link" th:href="@{/page2}">Previous</a>     
-                </li>
+                </li> -->
             </ul> 
         </div>
     </div>
@@ -63,12 +63,13 @@
         <div class="card2">
             <div class="card2">
                 <h1 class="definition">MLP Result</h1><br>  
-                    <p class="review"> 
+                    <p class="review indent"> 
                         <th:block th:text="${val}" >mlp</th:block>
                     </p> 
-                    <p class="review"> 
+                    <p class="review indent"> 
                         <th:block th:text="${strVal}" >mlp</th:block>
                     </p>
+                    <button class="btn btn-secondary indent nav-link" th:href="@{/page2}">Previous Page</button><br> 
                     <!-- <p class="review"> 
                         <th:block th:text="${percentage}" >mlp</th:block>
                     </p>   -->
