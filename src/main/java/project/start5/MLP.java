@@ -6,7 +6,7 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.List; 
-import java.util.Map;
+import java.util.Map; 
 
 import org.springframework.ui.Model;
 import org.springframework.core.io.ClassPathResource;
@@ -134,6 +134,7 @@ public class MLP {
 	 	data.setClassIndex(data.numAttributes() - 1);
 	 			//System.out.println(attributes.size());
 	} 
+	
 	public String[] engine(Fragment root, String age, String gen) throws IOException, URISyntaxException  {
  		HashMap<String, Double> inputs =  mapInputs(root, age, gen);
  		double prediction = 0.0;

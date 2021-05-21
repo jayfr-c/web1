@@ -39,6 +39,19 @@ public class DataHandler {
 		return l; 
 	}
 
+	public List<String> getVariables() throws IOException, URISyntaxException {
+		ArrayList list = new ArrayList();
+		list.add("pregnancies");
+		list.add("glucose");
+		list.add("bloodPressure");
+		list.add("skinThickness");
+		list.add("insulin");
+		list.add("bmi");
+		list.add("diabetesPedigreeFunction");
+		list.add("age");
+		return list;
+	}
+
 	public File getFile(String fileName) throws URISyntaxException {
 		ClassLoader cl = getClass().getClassLoader();
 		URL resource = cl.getResource(fileName);

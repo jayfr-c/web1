@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Thymeleaf Application</title>
+
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">Spring Thymeleaf Application - T2DM Classification</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/index}">Home</a>     
+                </li>
+                <!-- <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/page2}">Previous</a>     
+                </li> -->
+            </ul> 
+        </div>
+    </div>
+</nav> 
+
+<div id="ui-root">
+    <div class="cardContainer"> 
+        <div class="card2">
+            <h1 class= "application">Application</h1> 
+            <br>  
+
+            <div class="listContainer">
+                <h2><strong>Pregnancies:</strong> <span th:text="${data.pregnancies}"></span></h2><br>
+                <h2><strong>Glucose:</strong> <span th:text="${data.glucose}"></span></h2><br>
+
+                <h2><strong>Blood Pressure:</strong> <span th:text="${data.bloodPressure}"></span></h2><br>
+                <h2><strong>Skin Thickness:</strong> <span th:text="${data.skinThickness}"></span></h2><br>
+
+                <h2><strong>Insulin:</strong> <span th:text="${data.insulin}"></span></h2><br>
+                <h2><strong>BMI:</strong> <span th:text="${data.bmi}"></span></h2><br>
+
+                <h2><strong>Diabetes Pedigree Function:</strong> <span th:text="${data.diabetesPedigreeFunction}"></span></h2><br>
+                <h2><strong>Age:</strong> <span th:text="${data.age}"></span></h2><br>
+ 
+
+               <!--  <a th:href="@{/page2}" class="btn btn-primary">Go back</a> -->
+            </div>
+ 
+        </div> 
+        <div class="card2">
+            <div class="card2">
+                <h1 class="definition">MLP Result</h1><br>  
+                    <p class="review indent"> 
+                        <th:block th:text="${val}" >mlp</th:block>
+                    </p> 
+                    <p class="review indent"> 
+                        <th:block th:text="${strVal}" >mlp</th:block>
+                    </p>
+                    <div class="card2">
+                        <li class="nav-item active">
+                            <a class="nav-link" th:href="@{/t2dm}">Previous</a>     
+                        </li> 
+                    </div>
+                    <br> 
+                    <!-- <p class="review"> 
+                        <th:block th:text="${percentage}" >mlp</th:block>
+                    </p>   -->
+            </div>
+            <form th:action="@{/form}" method="get" >  
+                <div class="card2" style="min-height:250px">
+                    <h1 class="definition">Google Form</h1><br>  
+                    <button class="btn btn-secondary" type="submit" style="position:absolute;
+                        left:50%;
+                        transform: translate(40%, 40%);">Answer Evaluation Form</button><br>  
+                </div>
+            </form>
+            
+        </div> 
+        
+    </div>
+</div>
+
+
+</body>
+</html>

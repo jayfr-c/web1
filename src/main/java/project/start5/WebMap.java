@@ -35,7 +35,7 @@ public class WebMap {
     @ModelAttribute(name = "details")
     public Inputs inputs() {
         return new Inputs();
-    }
+    }  
 
     @ModelAttribute(name = "tree")
     public Fragment build() {
@@ -54,7 +54,7 @@ public class WebMap {
 
     @GetMapping("/page2")
     public String page2GMap(Model m) {
-        m.addAttribute("tree", constructor.buildTree());
+        m.addAttribute("tree", constructor.buildTree()); 
         return "page2";
     }
 
@@ -66,7 +66,7 @@ public class WebMap {
     @GetMapping("/results") 
     public String resultsMap() {
         return "results";
-    } 
+    }  
 
     @PostMapping("/page2")
     public String page2Map(Model m, @Valid Inputs details, Errors errors) { 
@@ -77,9 +77,7 @@ public class WebMap {
             return "page1";
         } 
         System.out.println("\n\n  --==--==---\n\n="+details.getAge());
-        this.details = details;
- 
-        //m.addAttribute("tree", constructor.buildTree());
+        this.details = details; 
         return "page2";
     }  
 
@@ -95,29 +93,43 @@ public class WebMap {
             return "page2";
         }
 
+        m.addAttribute("tree", root);
+        m.addAttribute("details", details);
         MLP mlp = new MLP();
-        String[] res = mlp.engine(root, details.getAge(), details.getGen());
-        System.out.println(root.getChildren().size()+"\n\n  --==--==---\n\n="+details.getAge());
-            m.addAttribute("tree", root);
-        m.addAttribute("val", res[0]);
-        m.addAttribute("strVal", res[1]); 
-        m.addAttribute("percentage", res[2]);
-        m.addAttribute("details", details); 
-
-        /*m.addAttribute("tree", root);
-        m.addAttribute("val", "@data");
-        m.addAttribute("strVal", "@data"); 
-        m.addAttribute("percentage", "@data");
-        m.addAttribute("details", details); */
-        //return "redirect:/saved"; 
+        if (screen(root)) {
+            String[] res = mlp.engine(root, details.getAge(), details.getGen());
+            System.out.println(root.getChildren().size()+"\n\n  --==--==---\n\n="+details.getAge());
+               
+            m.addAttribute("val", res[0]);
+            m.addAttribute("strVal", res[1]); 
+            //m.addAttribute("percentage", res[2]); 
+        }
+        else {
+            m.addAttribute("val", "0.0");
+            m.addAttribute("strVal", "\tNegative");  
+        }
+         
         return "results";
-    }
+    } 
 
     private Boolean emptyForm(Fragment root) { 
         for(Fragment f : root.getChildren()) {
             if(f.getValue() == null) continue;
             if (f.getValue() == true) 
                 return false;  
+        }
+        return true; 
+    }
+
+    private Boolean screen(Fragment root) {
+        List<Fragment> li = root.getChildren();
+        if (li.get(3).getValue() == null) return false;
+        if (li.get(3).getValue() == true) {
+            for (int i = 0; i < li.size(); i++) {
+                if (i == 3) continue;
+                if (li.get(i).getValue() == true)
+                    return false; 
+            }   
         }
         return true; 
     }

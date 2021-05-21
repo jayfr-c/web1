@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+ 
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"> 
+    <title>Spring Thymeleaf Application</title>
+
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.css} "/>
+    <link rel="stylesheet" th:href="@{/styles.css}" /> 
+</head>
+ 
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Spring Thymeleaf Application - T2DM Classification</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{/index}">Home</a>     
+                    </li>
+                </ul>
+                <!-- <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul> -->
+            </div>
+        </div>
+    </nav>
+
+    <form th:action="@{/results2}" th:object="${data}" method="post">
+        <div class="form-row card2">
+
+            <div class="col-md-6 form-group">
+                <label>Pregnancies</label>
+                <input type="number" class="form-control" th:field="*{pregnancies}">
+                 
+            </div>
+            
+            <div class="col-md-6 form-group">
+                <label>Glucose</label>
+                <input type="number" step=".01" class="form-control" th:field="*{glucose}">
+                
+            </div>
+
+            <div class="col-md-6 form-group">
+                <label>Blood Pressure</label>
+                <input type="number" step=".01" class="form-control" th:field="*{bloodPressure}">
+                 
+            </div>
+
+            <div class="col-md-6 form-group">
+                <label>Skin Thickness</label>
+                <input type="number" step=".01" class="form-control" th:field="*{skinThickness}">
+                 
+            </div>
+
+            <div class="col-md-6 form-group">
+                <label>Insulin</label>
+                <input type="number" step=".01" class="form-control" th:field="*{insulin}">
+                
+            </div>
+
+            <div class="col-md-6 form-group">
+                <label>BMI</label>
+                <input type="number" step=".01" class="form-control" th:field="*{bmi}">
+                 
+            </div>
+
+            <div class="col-md-6 form-group">
+                <label>Diabetes Pedigree Function</label>
+                <input type="number" step=".001" class="form-control" th:field="*{diabetesPedigreeFunction}">
+                
+            </div>
+
+            <div class="col-md-6 form-group">
+                <label>Age</label>
+                <input type="number" class="form-control" th:field="*{age}">
+               
+            </div>
+
+        <button class="btn btn-primary" type="submit">Submit form</button>
+    </form>
+</body>
+ 
+</html>
