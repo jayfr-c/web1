@@ -29,6 +29,7 @@ public class WebMap {
     @Autowired
     public WebMap(Constructor constructor) {
         this.constructor = constructor;
+        this.details = new Inputs();
         this.subMap = new SubMap();
     } 
 
@@ -42,8 +43,9 @@ public class WebMap {
         return constructor.buildTree();
     }
 
-    @GetMapping("/index")
+    @GetMapping({"/","/index"})
     public String main(Model m) {  
+        m.addAttribute("data", new Inputs2());
         return "index";
     }
 
@@ -84,7 +86,7 @@ public class WebMap {
 
     @PostMapping("/results")
     public String process(Fragment root, Model m) throws IOException, URISyntaxException { 
-        
+         
         if (emptyForm(root)) {
             String str = "  *select more than one from the checkboxes";
             m.addAttribute("str", str);
@@ -95,20 +97,21 @@ public class WebMap {
 
         m.addAttribute("tree", root);
         m.addAttribute("details", details);
+            System.out.println(root.getChildren().size()+"\n\n  --==--==---\n\n="+details.getAge());
+
         MLP mlp = new MLP();
         if (screen(root)) {
-            String[] res = mlp.engine(root, details.getAge(), details.getGen());
-            System.out.println(root.getChildren().size()+"\n\n  --==--==---\n\n="+details.getAge());
-               
-            m.addAttribute("val", res[0]);
-            m.addAttribute("strVal", res[1]); 
+                        System.out.println("@ (screen(root)) {");
+            m.addAttribute("val", "0.0");
+            m.addAttribute("strVal", "\tNegative"); 
             //m.addAttribute("percentage", res[2]); 
         }
-        else {
-            m.addAttribute("val", "0.0");
-            m.addAttribute("strVal", "\tNegative");  
+        else { 
+            String[] res = mlp.engine(root, details.getAge(), details.getGen()); 
+                    System.out.println("@ mlp.engine { " + res[0] + " --" + res[1] + " -- "+res[2]);
+            m.addAttribute("val", res[0]);
+            m.addAttribute("strVal", res[1]); 
         }
-         
         return "results";
     } 
 
@@ -122,15 +125,17 @@ public class WebMap {
     }
 
     private Boolean screen(Fragment root) {
-        List<Fragment> li = root.getChildren();
-        if (li.get(3).getValue() == null) return false;
+        List<Fragment> li = root.getChildren(); 
+        
         if (li.get(3).getValue() == true) {
             for (int i = 0; i < li.size(); i++) {
                 if (i == 3) continue;
                 if (li.get(i).getValue() == true)
                     return false; 
             }   
-        }
-        return true; 
+            return true; 
+        } else {
+            return false; 
+        } 
     }
 } 

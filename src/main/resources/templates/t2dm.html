@@ -4,17 +4,32 @@
 <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"> 
-    <title>Spring Thymeleaf Application</title>
+    <title>T2DM Classification</title>
 
-    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Unica+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <!-- <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
     <link th:rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.css} "/>
-    <link rel="stylesheet" th:href="@{/styles.css}" /> 
+    <link rel="stylesheet" th:href="@{/styles.css}" />  -->
 </head>
  
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
-            <a class="navbar-brand" href="/">Spring Thymeleaf Application - T2DM Classification</a>
+            <a class="navbar-brand" href="/">T2DM Classification</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                     aria-controls="navbarResponsive"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +62,7 @@
     </nav>
 
     <form th:action="@{/results2}" th:object="${data}" method="post">
-        <div class="form-row card2">
+        <div class="form-row card">
 
             <div class="col-md-6 form-group">
                 <label>Pregnancies</label>
@@ -100,5 +115,14 @@
         <button class="btn btn-primary" type="submit">Submit form</button>
     </form>
 </body>
- 
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/magnific-popup-options.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/custom.js"></script>
+
 </html>

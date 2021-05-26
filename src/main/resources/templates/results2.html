@@ -2,17 +2,33 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Spring Thymeleaf Application</title>
+    <title>T2DM Classification</title>
 
-    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Unica+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" th:href="@{/styles.css}" />
+
+    <!-- <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link rel="stylesheet" th:href="@{/styles.css}" /> -->
 </head>
 <body>
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-        <a class="navbar-brand" href="/">Spring Thymeleaf Application - T2DM Classification</a>
+        <a class="navbar-brand" href="/">T2DM Classification</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -32,12 +48,12 @@
 </nav> 
 
 <div id="ui-root">
-    <div class="cardContainer"> 
-        <div class="card2">
+    <div> 
+        <div class="card">
             <h1 class= "application">Application</h1> 
             <br>  
 
-            <div class="listContainer">
+            <div class="indent">
                 <h2><strong>Pregnancies:</strong> <span th:text="${data.pregnancies}"></span></h2><br>
                 <h2><strong>Glucose:</strong> <span th:text="${data.glucose}"></span></h2><br>
 
@@ -55,8 +71,8 @@
             </div>
  
         </div> 
-        <div class="card2">
-            <div class="card2">
+        <div class="card">
+            <div class="card">
                 <h1 class="definition">MLP Result</h1><br>  
                     <p class="review indent"> 
                         <th:block th:text="${val}" >mlp</th:block>
@@ -64,10 +80,10 @@
                     <p class="review indent"> 
                         <th:block th:text="${strVal}" >mlp</th:block>
                     </p>
-                    <div class="card2">
-                        <li class="nav-item active">
+                    <div class="card">
+                        <h2>
                             <a class="nav-link" th:href="@{/t2dm}">Previous</a>     
-                        </li> 
+                        </h2> 
                     </div>
                     <br> 
                     <!-- <p class="review"> 
@@ -75,11 +91,9 @@
                     </p>   -->
             </div>
             <form th:action="@{/form}" method="get" >  
-                <div class="card2" style="min-height:250px">
+                <div class="card" style="min-height:250px">
                     <h1 class="definition">Google Form</h1><br>  
-                    <button class="btn btn-secondary" type="submit" style="position:absolute;
-                        left:50%;
-                        transform: translate(40%, 40%);">Answer Evaluation Form</button><br>  
+                    <button class="btn btn-secondary mid-v" type="submit">Answer Evaluation Form</button><br>  
                 </div>
             </form>
             
@@ -88,6 +102,13 @@
     </div>
 </div>
 
-
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/magnific-popup-options.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/custom.js"></script>
 </body>
 </html>

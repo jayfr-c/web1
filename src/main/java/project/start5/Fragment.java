@@ -24,6 +24,6 @@ public class Fragment {
     private List<Fragment> children;
 
     public Fragment(){
-
+    	this.value = false;
     } 
 }

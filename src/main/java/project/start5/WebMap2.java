@@ -44,9 +44,9 @@ public class WebMap2 {
         if (errors.hasErrors()) { 
             return "t2dm";
         }    
-            //System.out.println(this.data.getAge()+"--------\n-----\n------\n "+data.getAge());
         MLP2 mlp = new MLP2(); 
         String[] res = mlp.engine(data);
+                            System.out.println("@mlp2 " + res[0] + " --" + res[1] + " -- "+res[2]);
             m.addAttribute("data", data);
         m.addAttribute("val", res[0]);
         m.addAttribute("strVal", res[1]); 
